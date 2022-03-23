@@ -18,7 +18,7 @@ const productos = [
     { id: 11, titulo: "Bordados", precio: "1.000", stock: 22 },
     { id: 12, titulo: "Almohadon especial", precio: "9.800", stock: 26 },
 ];
-
+    
 generarCards(productos);
 
 function generarCards(productosAMostrar){
