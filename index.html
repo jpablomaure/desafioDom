@@ -40,12 +40,14 @@
         <div class="titulo">
             <h1>TIENDA</h1>
         </div>
-        <div><input type="text" id="buscarProducto">
-        <button onclick="buscarProducto()">Buscar Producto</button></div>
+        <div><input type="text" id="buscarProducto" on>
+            <button onclick="buscarProducto()" id="botonBuscar">Buscar Producto</button>
+            <button onclick="generarCards(productos)">Reset</button>
+        </div>
         <div class="container">
             <div class="row">
                 <section id="product" class="tienda ">
-                    
+
                 </section>
                 <!-- Fin contenido principal  -->
             </div>

@@ -29,27 +29,31 @@ function generarCards(productosAMostrar){
         <div class="producto--prod${elementoDelArray.id}"> </div>
         <p>$${elementoDelArray.precio}</p>
     </div>`;
+    
     });
+    
     mostrarCardsEnElHTML(acumuladorDeCards);
 }
 
 function mostrarCardsEnElHTML(cards) {
     document.getElementById("product").innerHTML = cards;
 };
-// hasta aca llegue y no me sale como pasar el valor de un producto eligindolo en la tienda
-
-// function sumarImporte(elemento) {
-//     // console.log(`el valor es:   ${elemento} `);
-//     const valor = "";
-//     valor = producto[elemento].precio;
-//     console.log(`el valor es ${valor}`);
-// }
 
 function buscarProducto() {
-    const nombreProductoBuscado = document.getElementById("buscarProducto").value.toUpperCase().trim();
+    const tecla = document.getElementById("buscarProducto");
 
+    tecla.addEventListener('keyup', function (event) {
+
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            document.getElementById("botonBuscar").click();
+        }
+    });
+    const nombreProductoBuscado = document.getElementById("buscarProducto").value.toUpperCase().trim();
+    console.log(nombreProductoBuscado);
     const productosEncontrados = productos.filter((producto) => {
         return producto.titulo.toUpperCase().match(nombreProductoBuscado);
+        console.log(productosEncontrados);
     });
 
     generarCards(productosEncontrados);
